@@ -9,7 +9,7 @@ data class TeamsModel(
 data class TeamsDataModel(
     @SerializedName("Name_Full") var countryNameFull : String,
     @SerializedName("Name_Short") var countryNameShort : String,
-    @SerializedName("Players") var Players : PlayersDataModel?
+    @SerializedName("Players") var Players : Map<String, PlayersDetailsModel>?
 )
 
 data class PlayersDataModel(

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/matchBoardFragment">
+
+
+    <fragment
+        android:id="@+id/matchBoardFragment"
+        android:name="com.example.sportsinteractiveassignment.ui.fragments.MatchBoardFragment"
+        android:label="fragment_match_board"
+        tools:layout="@layout/fragment_match_board">
+
+        <action
+            android:id="@+id/action_matchBoardFragment_to_matchDetailsFragment"
+            app:destination="@id/matchDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchDetailsFragment"
+        android:name="com.example.sportsinteractiveassignment.ui.fragments.MatchDetailsFragment"
+        android:label="fragment_match_details"
+        tools:layout="@layout/fragment_match_details" >
+        <action
+            android:id="@+id/action_matchDetailsFragment_to_matchBoardFragment"
+            app:destination="@id/matchBoardFragment" />
+    </fragment>
+</navigation>
