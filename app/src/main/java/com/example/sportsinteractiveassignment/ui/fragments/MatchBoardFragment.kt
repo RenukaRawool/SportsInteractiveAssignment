@@ -1,5 +1,6 @@
 package com.example.sportsinteractiveassignment.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
@@ -42,6 +46,12 @@ class MatchBoardFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
         }
         viewmodel.getMatchDetails()
+        adapter = MatchBoardDataAdapter(matchDataList,
+            onItemClick = { item ->
+                // Handle item click here
+                Toast.makeText(context,"hiiiii",Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_matchBoardFragment_to_matchDetailsFragment)
+            },)
 
         viewmodel.matchDetails.observe(viewLifecycleOwner)
         {
@@ -49,7 +59,6 @@ class MatchBoardFragment : Fragment() {
                 when (res) {
                     is Resource.Success -> {
                         res.data.data?.let { it1 -> matchDataList.addAll(it1) }
-                        adapter = MatchBoardDataAdapter(matchDataList)
                         binding.recyclerviewMatchboardCard.adapter = adapter
                     }
 

@@ -1,6 +1,7 @@
 package com.example.sportsinteractiveassignment.ui.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sportsinteractiveassignment.R
@@ -10,7 +11,7 @@ import com.example.sportsinteractiveassignment.utils.getCountryFlag
 import com.example.sportsinteractiveassignment.utils.setImage
 
 
-class MatchBoardDataAdapter(val itemList:List<DataModel>) : RecyclerView.Adapter<MatchBoardDataAdapter.MyViewHolder>() {
+class MatchBoardDataAdapter(val itemList:List<DataModel>,private val onItemClick: (DataModel) -> Unit) : RecyclerView.Adapter<MatchBoardDataAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -25,6 +26,7 @@ class MatchBoardDataAdapter(val itemList:List<DataModel>) : RecyclerView.Adapter
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = itemList[position]
+        holder.itemView.setOnClickListener { onItemClick(item) }
         holder.bindView(item)
     }
 

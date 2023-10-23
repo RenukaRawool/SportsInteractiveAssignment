@@ -8,73 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
-        <androidx.cardview.widget.CardView
-            android:id="@+id/topView"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            app:cardElevation="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:padding="20dp"
-                >
-
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:text="Hello Sportz Interactive"
-                    android:textSize="24sp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:src="@drawable/notification"
-                    android:layout_margin="10dp"
-                    />
-                <TextView
-                    android:id="@+id/txtSubTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/title"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:text="Good evening"
-                    android:textSize="14sp"
-                    android:textColor="@color/pink"
-                    android:textStyle="bold"
-                    />
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/txtSubTitle"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:src="@drawable/search_img"
-                    android:layout_margin="10dp"
-                    />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-        <TextView
-            android:id="@+id/txtAllMatches"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/topView"
-            app:layout_constraintStart_toStartOf="parent"
-            android:text="All Matches"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_margin="10dp"
-            />
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
@@ -82,8 +15,8 @@
             android:layout_height="0dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtAllMatches"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:defaultNavHost="true"
             android:layout_marginTop="10dp"
             app:navGraph="@navigation/nav_graph" />
