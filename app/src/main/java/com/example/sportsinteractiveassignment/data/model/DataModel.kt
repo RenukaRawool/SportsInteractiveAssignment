@@ -15,7 +15,7 @@ data class DataModel(
     val  innings : List<InningsModel>?,
 
     @SerializedName("Teams")
-    val  teams : TeamsModel?,
+    val  teams : Map<String, TeamsDataModel>?,
 
     @SerializedName("Notes")
     val  notes : NotesModel?,

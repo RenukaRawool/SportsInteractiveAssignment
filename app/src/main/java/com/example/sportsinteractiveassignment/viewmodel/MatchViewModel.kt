@@ -1,5 +1,6 @@
 package com.example.sportsinteractiveassignment.viewmodel
 
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.sportsinteractiveassignment.data.Repository
@@ -10,9 +11,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+
 class MatchViewModel(var repository: Repository) : ViewModel() {
 
-    private var matchDetails = MutableLiveData<Resource<MatchModel>?>()
+    var matchDetails = MutableLiveData<Resource<MatchModel>?>()
 
     fun getMatchDetails() {
         CoroutineScope(Dispatchers.IO).launch {
