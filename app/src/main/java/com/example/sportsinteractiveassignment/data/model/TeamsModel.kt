@@ -17,9 +17,11 @@ data class PlayersDataModel(
 )
 
 data class PlayersDetailsModel(
+    var country : String,
     @SerializedName("Position") var position : String,
     @SerializedName("Name_Full") var nameFull : String,
     @SerializedName("Iskeeper") var isKeeper : Boolean,
+    @SerializedName("Iscaptain") var isCaptain : Boolean,
     @SerializedName("Batting") var batting : PlayerBattingDetails,
     @SerializedName("Bowling") var bowling : PlayerBowlingDetails
 )
