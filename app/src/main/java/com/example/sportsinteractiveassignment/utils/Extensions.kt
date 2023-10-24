@@ -16,10 +16,10 @@ fun String?.getCountryFlag():String{
     return countryMap[this].orEmpty()
 }
 
-val countryMap = mapOf("IND" to "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/IN.svg",
-    "NZ" to "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/NZ.svg",
-    "PAK" to "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/PK.svg",
-    "SA" to "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/ZA.svg")
+val countryMap = mapOf("IND" to "https://hatscripts.github.io/circle-flags/flags/in.svg",
+    "NZ" to "https://hatscripts.github.io/circle-flags/flags/nz.svg",
+    "PAK" to "https://hatscripts.github.io/circle-flags/flags/pk.svg",
+    "SA" to "https://hatscripts.github.io/circle-flags/flags/za.svg")
 
 fun ImageView.setImage(url:String){
     val imageLoader = ImageLoader.Builder(this.context)
@@ -29,10 +29,7 @@ fun ImageView.setImage(url:String){
         .build()
 
     val request = ImageRequest.Builder(this.context)
-        .crossfade(true)
-        .crossfade(500)
         .data(url)
-        .transformations(CircleCropTransformation())
         .target(this)
         .build()
 

@@ -20,12 +20,18 @@
                 android:layout_height="wrap_content"
                 android:text="Seddan park, Hamilton"
                 android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/vs_img4"
+                app:layout_constraintStart_toEndOf="@+id/layout1"
+                app:layout_constraintEnd_toStartOf="@+id/layout2"
+                app:layout_constraintTop_toTopOf="@+id/layout1"
+                app:layout_constraintBottom_toBottomOf="@+id/layout1"/>
             <TextView
                 android:id="@+id/txtMatchODI"
                 android:layout_width="wrap_content"
@@ -35,6 +41,7 @@
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:textStyle="bold"
+                android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/layout1"
@@ -51,10 +58,10 @@
 
                 <ImageView
                     android:id="@+id/flagCountry1"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/indian_country_flag" />
 
                 <TextView
@@ -63,10 +70,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center_horizontal"
-                    android:text="India"
+                    android:text="country2"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -80,10 +88,10 @@
 
                 <ImageView
                     android:id="@+id/flagCountry2"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_gravity="center_horizontal"
-                    android:scaleType="centerCrop"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/indian_country_flag" />
 
                 <TextView
@@ -92,39 +100,36 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center_horizontal"
-                    android:text="India"
+                    android:text="country2"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/txtMatchDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1-31-89"
+                android:text="date"
                 android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/txtMatchTime"
-                app:layout_constraintEnd_toStartOf="@+id/layout2"
-                app:layout_constraintStart_toEndOf="@+id/layout1"
-                app:layout_constraintTop_toBottomOf="@+id/txtMatchODI"
-                app:layout_constraintVertical_chainStyle="packed" />
+                android:textSize="12sp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/txtMatchTime"
+                />
 
             <TextView
                 android:id="@+id/txtMatchTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4:00PM"
+                android:text="time"
                 android:textColor="@color/white"
                 android:textSize="12sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/txtMatchEquation"
-                app:layout_constraintEnd_toStartOf="@+id/layout2"
-                app:layout_constraintStart_toEndOf="@+id/layout1"
-                app:layout_constraintTop_toBottomOf="@+id/txtMatchDate" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <TextView
                 android:id="@+id/txtMatchEquation"
@@ -134,8 +139,8 @@
                 android:layout_marginBottom="10dp"
                 android:text="New Zealand beat India by 4 wickets"
                 android:textColor="@color/pink"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@+id/layout1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

@@ -22,9 +22,6 @@
         android:name="com.example.sportsinteractiveassignment.ui.fragments.MatchDetailsFragment"
         android:label="fragment_match_details"
         tools:layout="@layout/fragment_match_details" >
-        <action
-            android:id="@+id/action_matchDetailsFragment_to_matchBoardFragment"
-            app:destination="@id/matchBoardFragment" />
         <argument
             android:name="cardPosition"
             app:argType="integer" />
