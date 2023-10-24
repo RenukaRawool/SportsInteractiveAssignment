@@ -6,13 +6,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sportsinteractiveassignment.R
 import com.example.sportsinteractiveassignment.data.model.DataModel
+import com.example.sportsinteractiveassignment.data.model.PlayersDetailsModel
 import com.example.sportsinteractiveassignment.databinding.ResMatchBoardCardBinding
 import com.example.sportsinteractiveassignment.utils.getCountryFlag
 import com.example.sportsinteractiveassignment.utils.setImage
 
 
-class MatchBoardDataAdapter(val itemList:List<DataModel>,private val onItemClick: (Int,DataModel) -> Unit) : RecyclerView.Adapter<MatchBoardDataAdapter.MyViewHolder>() {
-
+class MatchBoardDataAdapter(private val onItemClick: (Int,DataModel) -> Unit) : RecyclerView.Adapter<MatchBoardDataAdapter.MyViewHolder>() {
+    val itemList= mutableListOf<DataModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val inflator = LayoutInflater.from(parent.context)
@@ -50,6 +51,14 @@ class MatchBoardDataAdapter(val itemList:List<DataModel>,private val onItemClick
             binding.flagCountry2.setImage(team2?.countryNameShort.getCountryFlag())
         }
 
+    }
+
+    fun updateDataAfterClear(m: List<DataModel>?) {
+        m?.let {
+            itemList?.clear()
+            itemList?.addAll(it)
+            notifyDataSetChanged()
+        }
     }
 
 }
